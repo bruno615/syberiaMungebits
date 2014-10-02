@@ -26,6 +26,7 @@ datekeeper_fn <- function(input, mode="date") {
 standardize_dividers <- function(input) {
   output <- tolower(input)
   output <- gsub(' ', '-', output)
+  output <- gsub(':', '-', output)
   output <- gsub('\\/', '-', output)
   output <- gsub('([a-z])(?=[0-9])', '\\1-', output, perl=T)
   output <- gsub('([0-9])(?=[a-z])', '\\1-', output, perl=T)
@@ -39,7 +40,7 @@ remove_punctuation <- function(input) {
 
 handle_order <- function(input) {
   strips <- strsplit(input, "-")[[1]]
-  if (nchar(strips[3]) == 4) output <- paste(strips[c(3,1,2)],collapse='-') else input
+  if (nchar(strips[3]) == 4) paste(strips[c(3,1,2)],collapse='-') else input
 }
 
 handle_two_digit_years <- function(input) {

@@ -27,6 +27,7 @@ test_that("it converts 19911211 to the proper date", { check_date(19911211, expe
 test_that("it converts 1991dec11 to the proper date", { check_date('1991dec11', expect_equal(as.Date('1991/12/11'), mp$data$x)) })
 test_that("it converts 11dec1991 to the proper date", { check_date('11dec1991', expect_equal(as.Date('1991/12/11'), mp$data$x)) })
 test_that("it converts dec111991 to the proper date", { check_date('dec111991', expect_equal(as.Date('1991/12/11'), mp$data$x)) })
+test_that("it converts 1991-12-11 03:14:15.9265 to the proper date", { check_date('1991-12-11 03:14:15.9265', expect_equal(as.Date('1991/12/11'), mp$data$x)) })
 test_that("it converts garbage to NA", { check_date('garbage', expect_equal('NA', mp$data$x)) })
 test_that("it converts to numeric date", { check_date('1991-12-11', expect_equal(8014, mp$data$x), 'numeric') })
 test_that("it converts to TRUE in is weekend mode if weekend", { check_date('2014-10-04', expect_equal(TRUE, mp$data$x), 'weekend') })
