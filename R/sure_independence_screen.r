@@ -5,6 +5,7 @@
 #' @param ... further SIS options. See also \code{sure_independence_screening} in
 #'   the \code{statsUtils} package.
 #' @param exclude character. A vector of variables to never remove.
+#' @param max_levels. The threshold at which SIS should stop if there are too many functions. (Default: 100)
 #' @param discretizer_params list. A list of parameters to pass to the \code{discretizer}
 #'   that discretizes all non-categorical variables before sure independence screening.
 #'   By default, these are \code{granularity = N}, \code{upper_count_bound = NULL},
