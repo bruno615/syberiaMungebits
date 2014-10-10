@@ -4,7 +4,7 @@
 \title{Sure independence screening function}
 \usage{
 sure_independence_screen(dataframe, ..., exclude = character(0),
-  max.levels = 100, discretizer_params = list())
+  max_levels = 100, discretizer_params = list())
 }
 \arguments{
 \item{dataframe}{a data.frame. Run sure independence screening on this
@@ -22,6 +22,8 @@ By default, these are \code{granularity = N}, \code{upper_count_bound = NULL},
 of levels in each existent factor variable (i.e. if some were pre-discretized),
 or 3 if there are less than 5 such variables. If any are left undiscretized,
 these will not be screened.}
+
+\item{max_levels.}{The threshold at which SIS should stop if there are too many functions. (Default: 100)}
 }
 \description{
 Sure independence screening function
